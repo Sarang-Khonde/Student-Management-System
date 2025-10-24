@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Register</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+		<!-- Brand -->
+		<a class="navbar-brand" href="#"> Student Management System</a>
+		<!-- Toggler/collapsibe Button -->
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<!-- Navbar links -->
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link" th:href="@{/students}"> Student Management </li>
+			</ul>
+		</div>
+	</nav>
+ <h1 style="text-align: center;">Create New Student</h1>
+ <form th:action="@{/students}" th:object="${student}" method="post" class="p-4 border rounded bg-light shadow-sm">
+	<div class="mb-3">
+		<label for="firstName" class="form-label fw-bold">First Name</label>
+		<input type="text" name="firstName" id="firstName" placeholder="enter first name" class="form-control">
+	</div>
+
+	<div class="mb-3">
+		<label for="lastName" class="form-label fw-bold">Last Name</label>
+		<input type="text" name="lastName" id="lastName" placeholder="enter last name" class="form-control">
+	</div>
+
+	<div class="mb-3">
+		<label for="email" class="form-label fw-bold">Email</label>
+		<input type="email" name="email" id="email" placeholder="Enter valid email" class="form-control">
+	</div>
+
+	
+	<div class="d-grid">
+		 <button type="submit" class="btn btn-primary">Submit</button>
+	</div>
+ </form>
+</body>
+</html>
